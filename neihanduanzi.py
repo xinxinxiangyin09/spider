@@ -9,13 +9,12 @@ class Spider:
         self.page = 1 #当前要爬去第几页
 
     def load_page(self, page):#发送内涵段子url请求，得到html源码
-        url = "http://www.neihan8.com/article/list_5_"+ str(page) + ".html"         
-        user_agent="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"
-        headers = {"User-Agent": user_agent}
+        url = "http://www.neihan8.com/article/list_5_"+ str(page) + ".html"
+        headers = {"User-Agent" : "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"}
         req = urllib2.Request(url, headers = headers)
         response = urllib2.urlopen(req)
         html = response.read()
-        new_html = html.decode("gbk").encode("utf-8")
+        new_html = html.decode("gbk").encode("utf-8")#转换编码
 
         #用正则表达式将new-html过滤 得到所有的段子
         # 所有的段子在<div class="f18 mb20">－－－－－</div>
