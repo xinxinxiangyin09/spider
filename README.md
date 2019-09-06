@@ -12,3 +12,9 @@
 糗事百科段子抓取,使用mysql存库
 # movie_sky.py
 电影天堂的电影链接抓取
+# proxy
+代理IP的抓取
+# douban.py
+豆瓣电影排行榜抓取
+# baidu_tieba
+百度贴吧的图片抓取
