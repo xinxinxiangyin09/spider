@@ -15,7 +15,7 @@
 # proxy
 代理IP的抓取
 - 环境：Ubuntu 18.0.4 + python 3.6 + MySQL 5.7
-- 模块：requests + lxml + fake_useragent
+- 模块：requests + lxml + fake_useragent + pymysql
 - 使用说明：
   - 执行SQL脚本，创建数据表
   - 配置config文件
