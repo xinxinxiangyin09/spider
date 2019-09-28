@@ -1,5 +1,4 @@
 import requests
-from fake_useragent import UserAgent
 from hashlib import md5
 import random
 import time
@@ -8,7 +7,7 @@ import json
 
 class YoudaoSpider(object):
     def __init__(self):
-        pass
+        self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50'}
 
     # 计算请求需要的查询参数 salt sign ts
     def get_arg(self, word):
@@ -29,7 +28,7 @@ class YoudaoSpider(object):
         # URL为"http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule"
         url = "http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule"
         headers = {
-            "User-Agent": UserAgent().random,
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50",
             "Accept": "application/json, text/javascript, */*; q=0.01",
             "Accept-Language": "zh-CN,zh;q=0.9",
             "Connection": "keep-alive",
@@ -74,5 +73,5 @@ if __name__ == '__main__':
             spider.attack_yd(word)
         except KeyboardInterrupt:
             print("\n用户退出")
-        except Exception:
-            print("程序异常")
+        except Exception as e:
+            print("程序异常", e)
